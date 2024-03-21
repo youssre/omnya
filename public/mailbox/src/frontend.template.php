@@ -316,12 +316,12 @@ function niceDate($date) {
             </p>
         </div>
 
-        <p>
+        <!-- <p>
             <small>Powered by
                 <a
                         href="https://github.com/synox/disposable-mailbox"><strong>synox/disposable-mailbox</strong></a>
             </small>
-        </p>
+        </p> -->
     </div>
 </footer>
 

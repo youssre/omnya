@@ -142,8 +142,8 @@
                                     </p>
                                 </div>
 
-                                <div>
-                                    
+                                <div class="col-12">
+                                    <iframe width="100%" height="300" :src="`/generate-mailbox?${recovery_email || 'omnea@uruk.uk'}`"></iframe>
                                 </div>
 
                             </div>
@@ -197,6 +197,7 @@ export default {
 
     }),
     methods: {
+        
         acceptCondition() {
             this.termStatus = false;
         },

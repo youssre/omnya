@@ -271,6 +271,10 @@
                                         {{ note }}
                                     </p>
                                 </div>
+
+                                <div class="col-12 mb-2">
+                                    <iframe width="100%" height="300" :src="`/generate-mailbox?${email || 'omnea@uruk.uk'}`"></iframe>
+                                </div>
                             </div>
                         </div>
                     </div>
