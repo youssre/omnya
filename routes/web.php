@@ -3,7 +3,7 @@
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
-Route::any('generate-mailbox', function () {
+Route::get('generate-mailbox', function () {
     require_once public_path('mailbox/src/config.php');
     require_once public_path('mailbox/src/backend-libs/autoload.php');
     require_once public_path('mailbox/src/user.php');
@@ -12,7 +12,8 @@ Route::any('generate-mailbox', function () {
     require_once public_path('mailbox/src/router.php');
 
     $imapClient = new ImapClient($config['imap']['url'], $config['imap']['username'], $config['imap']['password']);
-    $router = new Router($_SERVER['REQUEST_METHOD'], $_GET['action'] ?? NULL, $_GET, $_POST, $_SERVER['QUERY_STRING'], $config);
+
+    $router = new Router($_SERVER['REQUEST_METHOD'], $_GET['action'] ?? NULL, $_GET, $_POST, $_SERVER['QUERY_STRING']??NULL, $config);
     $controller = $router->route();
     $controller->setViewHandler(new ServerRenderViewHandler());
     $controller->invoke($imapClient);

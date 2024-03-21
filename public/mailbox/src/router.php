@@ -11,7 +11,7 @@ class Router {
     protected $query_string;
     protected $config;
 
-    public function __construct(string $method, ?string $action = NULL, ?array $get_vars, array $post_vars, ?string $query_string, array $config) {
+    public function __construct(string $method, ?string $action = NULL, ?array $get_vars, array $post_vars, ?string $query_string = NULL, array $config) {
         $this->method = $method;
         $this->action = $action;
         $this->get_vars = $get_vars;
