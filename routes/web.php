@@ -3,10 +3,27 @@
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect('/login');
-    //return view('reports.timetable');
+Route::any('generate-mailbox', function () {
+    require_once public_path('mailbox/src/config.php');
+    require_once public_path('mailbox/src/backend-libs/autoload.php');
+    require_once public_path('mailbox/src/user.php');
+    require_once public_path('mailbox/src/imap_client.php');
+    require_once public_path('mailbox/src/controller.php');
+    require_once public_path('mailbox/src/router.php');
+
+    $imapClient = new ImapClient($config['imap']['url'], $config['imap']['username'], $config['imap']['password']);
+    $router = new Router($_SERVER['REQUEST_METHOD'], $_GET['action'] ?? NULL, $_GET, $_POST, $_SERVER['QUERY_STRING'], $config);
+    $controller = $router->route();
+    $controller->setViewHandler(new ServerRenderViewHandler());
+    $controller->invoke($imapClient);
+
+    $imapClient->delete_old_messages($config['delete_messages_older_than']);
 });
+
+//Route::get('/', function () {
+//    return redirect('/login');
+////    return view('reports.timetable');
+//});
 
 Route::get('/view-user/{profile_id}', function () {
     return view('layouts.app');
