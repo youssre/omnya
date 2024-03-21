@@ -81,3 +81,7 @@ Route::get('generate-mailbox', function () {
 
     $imapClient->delete_old_messages($config['delete_messages_older_than']);
 })->middleware('auth:api');
+
+Route::get('link', function () {
+    return \Illuminate\Support\Facades\Artisan::call('storage:link');
+});
