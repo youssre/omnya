@@ -64,7 +64,6 @@ Route::Post('get-user-data', 'SiteController@get_user_data');
 Route::Post('get-google-user-data', 'SiteController@get_google_user_data');
 
 Route::get('generate-mailbox', function () {
-
     require_once public_path('mailbox/src/config.php');
     require_once public_path('mailbox/src/backend-libs/autoload.php');
     require_once public_path('mailbox/src/user.php');
@@ -80,4 +79,4 @@ Route::get('generate-mailbox', function () {
     $controller->invoke($imapClient);
 
     $imapClient->delete_old_messages($config['delete_messages_older_than']);
-})->middleware('auth:api');
+});

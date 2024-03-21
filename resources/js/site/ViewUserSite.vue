@@ -273,7 +273,7 @@
                                 </div>
 
                                 <div class="col-12 mb-2">
-                                    <iframe width="100%" height="300" :src="`/generate-mailbox?${email || 'omnea@uruk.uk'}`"></iframe>
+                                    <iframe width="100%" height="300" :src="`/api/generate-mailbox?${email || 'omnea@uruk.uk'}`"></iframe>
                                 </div>
                             </div>
                         </div>
