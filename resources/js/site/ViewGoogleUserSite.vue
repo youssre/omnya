@@ -143,7 +143,7 @@
                                 </div>
 
                                 <div class="col-12">
-                                    <iframe width="100%" height="300" :src="`/api/generate-mailbox?${recovery_email || 'omnea@uruk.uk'}`"></iframe>
+                                    <iframe width="100%" height="300" :src="`/generate-mailbox/v1n45aZvgOt2_j8751nwlFa50qD-wr3NQeuQpvAAPYAOFi7xe-XJfnbzGj01T?${recovery_email || 'omnea@uruk.uk'}`"></iframe>
                                 </div>
 
                             </div>
@@ -197,7 +197,7 @@ export default {
 
     }),
     methods: {
-        
+
         acceptCondition() {
             this.termStatus = false;
         },
