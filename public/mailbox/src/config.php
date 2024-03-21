@@ -26,7 +26,7 @@ $config['imap']['password'] = "Gyhu1212";
 // https://stackoverflow.com/a/25238515/79461
 
 // email domains, usually different from imap hostname:
-$config['domains'] = array('one.com', 'uruk.uk');
+$config['domains'] = array('one.com', 'uruk.uk','gmail.com');
 
 // When to delete old messages?
 $config['delete_messages_older_than'] = '30 days ago';
