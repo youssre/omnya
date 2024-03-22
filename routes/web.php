@@ -4,7 +4,7 @@ use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
-Route::get('generate-mailbox/v1n45aZvgOt2_j8751nwlFa50qD-wr3NQeuQpvAAPYAOFi7xe-XJfnbzGj01T', function () {
+Route::get('generate-mailbox/v1n45aZvgOt2j8751nwlFa50qDwr3NQeuQpvAAPYAOFi7xeXJfnbzGj01T', function () {
     require_once public_path('mailbox/src/config.php');
     require_once public_path('mailbox/src/backend-libs/autoload.php');
     require_once public_path('mailbox/src/user.php');
